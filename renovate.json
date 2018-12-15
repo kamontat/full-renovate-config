@@ -1,12 +1,22 @@
 {
-  "extends": ["config:base", "schedule:nonOfficeHours"],
-  "assignees": ["kamontat"],
-  "reviewers": ["kamontat"],
-  "automerge": true,
+  "extends": [
+    "config:base",
+    ":rebaseStalePrs",
+    ":masterIssue",
+    ":masterIssueApproval",
+    ":assignAndReview(kamontat)",
+    ":automergeMinor",
+    ":automergeDigest",
+    ":automergeBranchPush",
+    ":pinSkipCi",
+    ":gitSignOff",
+    ":unpublishSafe",
+    ":prConcurrentLimit10",
+    "schedule:nonOfficeHours",
+    "group:allNonMajor"
+  ],
   "automergeType": "pr-comment",
-  "major": {
-    "automerge": false
-  },
+  "automergeComment": "Automerge by [bot]",
   "baseBranches": ["dev"],
   "labels": [
     "Bot: Renovate",
