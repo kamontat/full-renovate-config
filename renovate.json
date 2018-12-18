@@ -2,8 +2,6 @@
   "extends": [
     "config:base",
     ":rebaseStalePrs",
-    ":masterIssue",
-    ":masterIssueApproval",
     ":assignAndReview(kamontat)",
     ":automergeMinor",
     ":automergeDigest",
